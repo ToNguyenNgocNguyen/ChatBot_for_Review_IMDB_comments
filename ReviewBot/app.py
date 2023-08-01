@@ -29,6 +29,3 @@ def predict():
     else:
         return "The review is negative."
     
-
-if __name__ == "__main__":
-    app.run(port=8080)
