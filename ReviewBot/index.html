@@ -104,7 +104,8 @@
     inputText.addEventListener('keypress', async (event) => {   
         if (event.key === 'Enter') {  // Run this action when user type something into inputText 
             const inputValue = inputText.value;  // We get the text value typed by the user 
-            const data = 'http://localhost:8080/predict?text=' + encodeURIComponent(inputText.value) // And send the user text to our backend
+            // change localhost:8080 to new localhost
+            const data = 'http://0.0.0.0:80/predict?text=' + encodeURIComponent(inputText.value) // And send the user text to our backend
             result = await fetch(data).then(response => response.text()) // Let's wait for backend to return a response. The result will be 'The review is postive' or ' The review is negative'
 
             // Now we will update what the user has typed, and the result from backend, and add it to the HTML body so the user can see both their text and review result.
